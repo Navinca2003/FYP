@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
@@ -15,12 +15,12 @@
 
                         <div class="mb-4">
                             <label for="project_title" class="block text-sm font-medium text-white">Project Title</label>
-                            <input type="text" name="project_title" id="project_title" value="{{ $researchGrant->project_title }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black" required>
+                            <input type="text" name="project_title" id="project_title" value="{{ $researchGrant->project_title }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black dark:text-white bg-gray-200 dark:bg-gray-700" required>
                         </div>
 
                         <div class="mb-4">
                             <label for="project_leader_id" class="block text-sm font-medium text-white">Project Leader</label>
-                            <select name="project_leader_id" id="project_leader_id" class="form-select rounded-md shadow-sm mt-1 block w-full text-black" required>
+                            <select name="project_leader_id" id="project_leader_id" class="form-select rounded-md shadow-sm mt-1 block w-full text-black dark:text-white bg-gray-200 dark:bg-gray-700" required>
                                 @foreach ($academicians as $academician)
                                     <option value="{{ $academician->id }}" {{ $researchGrant->project_leader_id == $academician->id ? 'selected' : '' }}>
                                         {{ $academician->name }}
@@ -31,25 +31,27 @@
 
                         <div class="mb-4">
                             <label for="grant_amount" class="block text-sm font-medium text-white">Grant Amount</label>
-                            <input type="number" name="grant_amount" id="grant_amount" value="{{ $researchGrant->grant_amount }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black" required>
+                            <input type="number" name="grant_amount" id="grant_amount" value="{{ $researchGrant->grant_amount }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black dark:text-white bg-gray-200 dark:bg-gray-700" required>
                         </div>
 
                         <div class="mb-4">
                             <label for="grant_provider" class="block text-sm font-medium text-white">Grant Provider</label>
-                            <input type="text" name="grant_provider" id="grant_provider" value="{{ $researchGrant->grant_provider }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black" required>
+                            <input type="text" name="grant_provider" id="grant_provider" value="{{ $researchGrant->grant_provider }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black dark:text-white bg-gray-200 dark:bg-gray-700" required>
                         </div>
 
                         <div class="mb-4">
                             <label for="start_date" class="block text-sm font-medium text-white">Start Date</label>
-                            <input type="date" name="start_date" id="start_date" value="{{ $researchGrant->start_date }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black" required>
+                            <input type="date" name="start_date" id="start_date" value="{{ $researchGrant->start_date }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black dark:text-white bg-gray-200 dark:bg-gray-700" required>
                         </div>
 
                         <div class="mb-4">
                             <label for="duration_months" class="block text-sm font-medium text-white">Duration (Months)</label>
-                            <input type="number" name="duration_months" id="duration_months" value="{{ $researchGrant->duration_months }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black" required>
+                            <input type="number" name="duration_months" id="duration_months" value="{{ $researchGrant->duration_months }}" class="form-input rounded-md shadow-sm mt-1 block w-full text-black dark:text-white bg-gray-200 dark:bg-gray-700" required>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Update Research Grant</button>
+                        <button type="submit" class="px-8 py-3 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 text-white rounded-lg shadow-md font-semibold text-lg hover:from-green-600 hover:via-teal-600 hover:to-blue-600 transform transition duration-300">
+                            Update Research Grant
+                        </button>
                     </form>
                 </div>
             </div>

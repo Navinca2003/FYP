@@ -5,49 +5,57 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-lg sm:rounded-lg">
+                <div class="p-8 text-gray-900 dark:text-gray-100">
                     <div class="space-y-6">
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Milestone Name:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->milestone_name }}</p>
+                        <!-- Milestone Name Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Milestone Name:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->milestone_name }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Research Grant:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->researchGrant->project_title }}</p>
+                        <!-- Research Grant Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Research Grant:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->researchGrant->project_title }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Target Completion Date:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->target_completion_date }}</p>
+                        <!-- Target Completion Date Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Target Completion Date:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->target_completion_date }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Deliverable:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->deliverable }}</p>
+                        <!-- Deliverable Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Deliverable:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->deliverable }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Status:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->status }}</p>
+                        <!-- Status Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Status:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->status }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Remarks:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->remark }}</p>
+                        <!-- Remarks Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Remarks:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->remark }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Last Updated:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $projectMilestone->date_updated ? $projectMilestone->date_updated->format('Y-m-d H:i:s') : 'Not Updated' }}</p>
+                        <!-- Last Updated Section -->
+                        <div class="bg-white dark:bg-gray-700 p-4 rounded-lg shadow-md">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Last Updated:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $projectMilestone->date_updated ? $projectMilestone->date_updated->format('Y-m-d H:i:s') : 'Not Updated' }}</p>
                         </div>
                     </div>
 
-                    <div class="mt-6">
-                        <a href="{{ route('projectMilestones.index') }}" class="btn btn-secondary mt-4 px-6 py-2 bg-gray-300 hover:bg-gray-400 text-white rounded-lg shadow-md">
+                    <!-- Back Button -->
+                    <div class="mt-8">
+                        <a href="{{ route('projectMilestones.index') }}" class="px-6 py-3 bg-blue-600 hover:bg-blue-800 text-white font-bold rounded-lg shadow-md">
                             Back to Milestones
                         </a>
                     </div>

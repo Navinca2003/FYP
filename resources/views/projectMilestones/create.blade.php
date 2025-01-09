@@ -1,19 +1,21 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-3xl text-center text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Add Project Milestone') }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-lg sm:rounded-lg">
+                <div class="p-8 text-gray-900 dark:text-gray-100">
                     <form action="{{ route('projectMilestones.store') }}" method="POST">
                         @csrf
-                        <div class="mb-4">
-                            <label for="research_grant_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Research Grant</label>
-                            <select name="research_grant_id" id="research_grant_id" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100">
+
+                        <!-- Research Grant Field -->
+                        <div class="mb-6">
+                            <label for="research_grant_id" class="block font-bold text-lg text-white">Research Grant</label>
+                            <select name="research_grant_id" id="research_grant_id" class="form-select block w-full mt-2 rounded-lg shadow-md text-black bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700" required>
                                 @forelse ($researchGrants as $grant)
                                     <option value="{{ $grant->id }}">{{ $grant->project_title }}</option>
                                 @empty
@@ -25,33 +27,37 @@
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label for="milestone_name" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Milestone Name</label>
-                            <input type="text" name="milestone_name" id="milestone_name" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100" required>
+                        <!-- Milestone Name Field -->
+                        <div class="mb-6">
+                            <label for="milestone_name" class="block font-bold text-lg text-white">Milestone Name</label>
+                            <input type="text" name="milestone_name" id="milestone_name" class="form-input block w-full mt-2 rounded-lg shadow-md text-black bg-white dark:bg-gray-600 dark:text-white border border-gray-300 dark:border-gray-500" required>
                             @error('milestone_name')
                                 <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label for="target_completion_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Target Completion Date</label>
-                            <input type="date" name="target_completion_date" id="target_completion_date" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100" required>
+                        <!-- Target Completion Date Field -->
+                        <div class="mb-6">
+                            <label for="target_completion_date" class="block font-bold text-lg text-white">Target Completion Date</label>
+                            <input type="date" name="target_completion_date" id="target_completion_date" class="form-input block w-full mt-2 rounded-lg shadow-md text-black bg-white dark:bg-gray-600 dark:text-white border border-gray-300 dark:border-gray-500" required>
                             @error('target_completion_date')
                                 <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label for="deliverable" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Deliverable</label>
-                            <textarea name="deliverable" id="deliverable" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100" required></textarea>
+                        <!-- Deliverable Field -->
+                        <div class="mb-6">
+                            <label for="deliverable" class="block font-bold text-lg text-white">Deliverable</label>
+                            <textarea name="deliverable" id="deliverable" rows="3" class="form-input block w-full mt-2 rounded-lg shadow-md text-black bg-white dark:bg-gray-600 dark:text-white border border-gray-300 dark:border-gray-500" required></textarea>
                             @error('deliverable')
                                 <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label for="status" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Status</label>
-                            <select name="status" id="status" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100" required>
+                        <!-- Status Field -->
+                        <div class="mb-6">
+                            <label for="status" class="block font-bold text-lg text-white">Status</label>
+                            <select name="status" id="status" class="form-select block w-full mt-2 rounded-lg shadow-md text-black bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700" required>
                                 <option value="Not Started">Not Started</option>
                                 <option value="In Progress">In Progress</option>
                                 <option value="Completed">Completed</option>
@@ -61,12 +67,18 @@
                             @enderror
                         </div>
 
-                        <div class="mb-4">
-                            <label for="remark" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Remarks (Optional)</label>
-                            <textarea name="remark" id="remark" rows="3" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"></textarea>
+                        <!-- Remark Field -->
+                        <div class="mb-6">
+                            <label for="remark" class="block font-bold text-lg text-white">Remarks (Optional)</label>
+                            <textarea name="remark" id="remark" rows="3" class="form-input block w-full mt-2 rounded-lg shadow-md text-black bg-white dark:bg-gray-600 dark:text-white border border-gray-300 dark:border-gray-500"></textarea>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Save Milestone</button>
+                        <!-- Submit Button -->
+                        <div class="text-center">
+                            <button type="submit" class="px-8 py-3 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 text-white rounded-lg shadow-md font-semibold text-lg hover:from-green-600 hover:via-teal-600 hover:to-blue-600 transform transition duration-300">
+                                Save Milestone
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>

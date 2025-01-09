@@ -5,44 +5,51 @@
         </h2>
     </x-slot>
 
-    <div class="py-12">
+    <div class="py-12 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-lg sm:rounded-lg">
+                <div class="p-8 text-gray-900 dark:text-gray-100">
                     <div class="space-y-6">
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Project Title:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $researchGrant->project_title }}</p>
+                        <!-- Project Title Section -->
+                        <div class="bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Project Title:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $researchGrant->project_title }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Project Leader:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $researchGrant->projectLeader->name }}</p>
+                        <!-- Project Leader Section -->
+                        <div class="bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Project Leader:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $researchGrant->projectLeader->name }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Grant Amount:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">${{ number_format($researchGrant->grant_amount, 2) }}</p>
+                        <!-- Grant Amount Section -->
+                        <div class="bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Grant Amount:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">${{ number_format($researchGrant->grant_amount, 2) }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Grant Provider:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $researchGrant->grant_provider }}</p>
+                        <!-- Grant Provider Section -->
+                        <div class="bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Grant Provider:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $researchGrant->grant_provider }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Start Date:</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ \Carbon\Carbon::parse($researchGrant->start_date)->format('M d, Y') }}</p>
+                        <!-- Start Date Section -->
+                        <div class="bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Start Date:</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ \Carbon\Carbon::parse($researchGrant->start_date)->format('M d, Y') }}</p>
                         </div>
 
-                        <div class="bg-gray-100 dark:bg-gray-700 p-4 rounded-lg shadow-sm">
-                            <h3 class="text-lg font-medium text-gray-900 dark:text-gray-100">Duration (Months):</h3>
-                            <p class="text-gray-700 dark:text-gray-300">{{ $researchGrant->duration_months }}</p>
+                        <!-- Duration Section -->
+                        <div class="bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700 p-4 rounded-lg shadow-sm">
+                            <h3 class="text-lg font-bold text-blue-700 dark:text-blue-300">Duration (Months):</h3>
+                            <p class="text-black dark:text-white bg-gray-200 dark:bg-gray-600 p-2 rounded-md">{{ $researchGrant->duration_months }}</p>
                         </div>
                     </div>
 
-                    <div class="mt-6">
-                        <a href="{{ route('researchGrants.index') }}" class="btn btn-secondary mt-4 px-6 py-2 bg-gray-300 hover:bg-gray-400 text-white rounded-lg shadow-md">
+                    <!-- Back Button -->
+                    <div class="mt-8">
+                        <a href="{{ route('researchGrants.index') }}" class="px-6 py-3 bg-gradient-to-r from-green-500 via-teal-500 to-blue-500 hover:from-green-600 hover:via-teal-600 hover:to-blue-600 text-white font-bold rounded-lg shadow-md">
                             Back to List
                         </a>
                     </div>
