@@ -13,19 +13,20 @@
                         @csrf
 
                         <!-- Research Grant Field -->
-                        <div class="mb-6">
-                            <label for="research_grant_id" class="block font-bold text-lg text-white">Research Grant</label>
-                            <select name="research_grant_id" id="research_grant_id" class="form-select block w-full mt-2 rounded-lg shadow-md text-black bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700" required>
-                                @forelse ($researchGrants as $grant)
-                                    <option value="{{ $grant->id }}">{{ $grant->project_title }}</option>
-                                @empty
-                                    <option value="" disabled>No Research Grants available</option>
-                                @endforelse
-                            </select>
-                            @error('research_grant_id')
-                                <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
-                            @enderror
-                        </div>
+<div class="mb-6">
+    <label for="research_grant_id" class="block font-bold text-lg text-white">Research Grant</label>
+    <select name="research_grant_id" id="research_grant_id" class="form-select block w-full mt-2 rounded-lg shadow-md text-black bg-gradient-to-r from-white to-gray-200 dark:from-gray-800 dark:to-gray-700" required>
+        @forelse ($researchGrants as $grant)
+            <option value="{{ $grant->id }}">{{ $grant->project_title }}</option>
+        @empty
+            <option value="" disabled>No Research Grants available</option>
+        @endforelse
+    </select>
+    @error('research_grant_id')
+        <div class="text-red-500 text-xs mt-1">{{ $message }}</div>
+    @enderror
+</div>
+
 
                         <!-- Milestone Name Field -->
                         <div class="mb-6">

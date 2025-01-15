@@ -11,6 +11,7 @@ class CreateProjectMilestonesTable extends Migration
         Schema::create('project_milestones', function (Blueprint $table) {
             $table->id();
             $table->foreignId('research_grant_id')->constrained('research_grants');
+
             $table->string('milestone_name');
             $table->date('target_completion_date');
             $table->text('deliverable');
